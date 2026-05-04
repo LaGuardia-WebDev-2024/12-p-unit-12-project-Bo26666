@@ -28,10 +28,10 @@ Select ONE Additional Feature to Add
       <label>
         🎥 What is my favorite movie?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">Boy</option>
+          <option value="movie2">Midnight Cowboy</option>
+          <option value="movie3">Forrest Gump 3</option>
+          <option value="movie4">Enternal Sunshine of the Spotless Mind</option>
         </select>
       </label>
       <button type="submit">Check Movie Answer</button>
@@ -45,10 +45,10 @@ Select ONE Additional Feature to Add
       <label>
         📖 What is my favorite book?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">Unwanteds</option>
+          <option value="book2">The Road</option>
+          <option value="book3">Hunger Games</option>
+          <option value="book4">GOT</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
@@ -69,25 +69,26 @@ Select ONE Additional Feature to Add
         if (answer === "movie1") {
           $("#movie-text").text("YESSSS!");
         } 
-        else {
-          $("#movie-text").text("Try Again!");
-        }
-      });
+        else { 
+  $("#movie-text").text("No");
+}
+   });
 
-      //=======================Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
+
+        $("#book-form").on("submit", function (event) {
         event.preventDefault();
 
         var $answer = $("#book-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
+        if (answer === "book2") {
           $("#book-text").text("YESSSS!");
         } 
-        else {
-          $("#book-text").text("Try Again!");
-        }
-      });
+        else { 
+  $("#book-text").text("No");
+}
+   });
+      
       
     </script>
   </body>

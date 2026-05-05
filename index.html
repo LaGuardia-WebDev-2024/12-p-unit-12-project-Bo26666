@@ -56,10 +56,23 @@ Select ONE Additional Feature to Add
     <div id="book-result">
       <p id="book-text"></p>
     </div>
+   
+     <img
+      id="Boy"
+      src="https://upload.wikimedia.org/wikipedia/commons/4/40/Chrysopelea_taprobanica.jpg"
+      width="400"
+    />
+   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       
       //========================Movie Question jQuery Code
+     
+ $("#snake-pic").hide();    
+     
+     
+     
+     
       $("#movie-form").on("submit", function (event) {
         event.preventDefault();
 
@@ -83,13 +96,19 @@ Select ONE Additional Feature to Add
 
         if (answer === "book2") {
           $("#book-text").text("YESSSS!");
+ $("#snake-pic").slideDown(400);
         } 
         else { 
   $("#book-text").text("No");
 }
    });
       
-      
+
+
+
+
+
+
     </script>
   </body>
 

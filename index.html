@@ -37,6 +37,18 @@ Select ONE Additional Feature to Add
       <button type="submit">Check Movie Answer</button>
     </form>
     <div id="movie-result">
+         <img
+      id="Boy"
+      src="https://www.indiewire.com/wp-content/uploads/2012/03/BOY09.jpg"
+      width="400"
+   />
+
+<img
+   id="stinky"
+      src="https://media.tenor.com/7ar7Vn3-IKEAAAAM/nerd.gif"
+      width="400"
+      />
+
       <p id="movie-text"></p>
     </div>
     <hr />
@@ -54,49 +66,55 @@ Select ONE Additional Feature to Add
       <button type="submit">Check Book Answer</button>
     </form>
     <div id="book-result">
+       <img
+      id="Road"
+      src="https://m.media-amazon.com/images/I/81ChFcmhXDL._UF1000,1000_QL80_.jpg"
+      width="200"
+    />
       <p id="book-text"></p>
     </div>
    
-     <img
-      id="Boy"
-      src="https://upload.wikimedia.org/wikipedia/commons/4/40/Chrysopelea_taprobanica.jpg"
-      width="400"
-    />
+  
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       
       //========================Movie Question jQuery Code
      
- $("#snake-pic").hide();    
-     
-     
+ $("#Boy").hide();    
+   $("#stinky").hide();       
+     $("#Road").hide();
      
      
       $("#movie-form").on("submit", function (event) {
         event.preventDefault();
-
-        var $answer = $("#movie-answer");
+$("#Boy").hide();    
+   $("#stinky").hide(); 
+        
+   var $answer = $("#movie-answer");
         var answer = $answer.val();
 
         if (answer === "movie1") {
           $("#movie-text").text("YESSSS!");
+          $("#Boy").slideDown(400);
         } 
         else { 
   $("#movie-text").text("No");
-}
+ $("#stinky").fadeIn(400);}
    });
 
 
         $("#book-form").on("submit", function (event) {
         event.preventDefault();
+$("#Road").hide();
+     
 
         var $answer = $("#book-answer");
         var answer = $answer.val();
 
         if (answer === "book2") {
           $("#book-text").text("YESSSS!");
- $("#snake-pic").slideDown(400);
+ $("#Road").slideDown(200);
         } 
         else { 
   $("#book-text").text("No");

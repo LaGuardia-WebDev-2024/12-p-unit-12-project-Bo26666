@@ -17,118 +17,70 @@ Select ONE Additional Feature to Add
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Unit 12 Project</title>
+    <title>Unit 11 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+      /* [Requirement] Add Five CSS Declarations */
+      body { background-color: #f0f8ff; font-family: sans-serif; text-align: center; }
+      h1 { color: #2c3e50; text-transform: uppercase; }
+      .memory-image { width: 200px; border-radius: 10px; display: none; margin-top: 10px; border: 3px solid #34495e; }
+      ol { list-style-position: inside; padding: 0; }
+      li { margin-bottom: 30px; padding: 20px; border-bottom: 1px solid #ccc; }
+    </style>
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
-    <hr />
-    <!-- Movie Question -->
-    <form id="movie-form">
-      <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">Boy</option>
-          <option value="movie2">Midnight Cowboy</option>
-          <option value="movie3">Forrest Gump 3</option>
-          <option value="movie4">Enternal Sunshine of the Spotless Mind</option>
-        </select>
-      </label>
-      <button type="submit">Check Movie Answer</button>
-    </form>
-    <div id="movie-result">
-         <img
-      id="Boy"
-      src="https://www.indiewire.com/wp-content/uploads/2012/03/BOY09.jpg"
-      width="400"
-   />
+    <button id="mem1-button">Movie #1</button>
+    <button id="mem2-button">Movie#2</button>
+    <button id="mem3-button">Movie #3</button>
+    
+    <h1>My Top 3 Movies of <span class="year-text">This Year</span></h1>
+    
+    <ol>
+      <li>
+        <h3 id="mem1">Movie #1</h3>
+        <p>Boy</p>
+        <!-- [Requirement] Include Three Images -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz5Ok6QI800htx01lfpELkVDE9DlcE8a1M1VyJ6W0DXOQV6spFwOPXV6eEIdrTVMdex4zVZg&s=10" class="memory-image" id="img1">
+      </li>
 
-<img
-   id="stinky"
-      src="https://media.tenor.com/7ar7Vn3-IKEAAAAM/nerd.gif"
-      width="400"
-      />
+      <li>
+        <h3 id="mem2">movie #2</h3>
+        <p>Iron Claw.</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKA7vUyTuDB7pyVDAyfjgR6nnsWgwa9IsNGKsT7-ZIZV3RpGn91ytlnLIOggdGv1qOIMN2&s=10" class="memory-image" id="img2">
+      </li>
 
-      <p id="movie-text"></p>
-    </div>
-    <hr />
-    <!-- Book Question -->
-    <form id="book-form">
-      <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">Unwanteds</option>
-          <option value="book2">The Road</option>
-          <option value="book3">Hunger Games</option>
-          <option value="book4">GOT</option>
-        </select>
-      </label>
-      <button type="submit">Check Book Answer</button>
-    </form>
-    <div id="book-result">
-       <img
-      id="Road"
-      src="https://m.media-amazon.com/images/I/81ChFcmhXDL._UF1000,1000_QL80_.jpg"
-      width="200"
-    />
-      <p id="book-text"></p>
-    </div>
-   
-  
-   
+      <li>
+        <h3 id="mem3">Movie #3</h3>
+        <p>Midnight Cowboy</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvu-VT5ehsPONVF7eq1OGn-cjQXpe9AjRJFf6pCO5XqrNmBtRa25_aLBrMD2G8N-R3xNO1&s=10" class="memory-image" id="img3">
+      </li>
+    </ol>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-      
-      //========================Movie Question jQuery Code
-     
- $("#Boy").hide();    
-   $("#stinky").hide();       
-     $("#Road").hide();
-     
-     
-      $("#movie-form").on("submit", function (event) {
-        event.preventDefault();
-$("#Boy").hide();    
-   $("#stinky").hide(); 
-        
-   var $answer = $("#movie-answer");
-        var answer = $answer.val();
+      // ======================== Button #1
+      $("#mem1-button").click(function () {
+        // [Requirement] Select by ID and use .css()
+        $("#mem1").css("color", "purple");
+        // [Feature 5] Use .fadeIn()
+        $("#img1").fadeIn(); 
+      });
 
-        if (answer === "movie1") {
-          $("#movie-text").text("YESSSS!");
-          $("#Boy").slideDown(400);
-        } 
-        else { 
-  $("#movie-text").text("No");
- $("#stinky").fadeIn(400);}
-   });
+      // ======================== Button #2
+      $("#mem2-button").click(function () {
+        // [Requirement] Select by Element (h1) and use .append() (Method 2)
+        $("h1").append(" ✨"); 
+        $("#mem2").css("color", "blue");
+        $("#img2").fadeIn();
+      });
 
-
-        $("#book-form").on("submit", function (event) {
-        event.preventDefault();
-$("#Road").hide();
-     
-
-        var $answer = $("#book-answer");
-        var answer = $answer.val();
-
-        if (answer === "book2") {
-          $("#book-text").text("YESSSS!");
- $("#Road").slideDown(200);
-        } 
-        else { 
-  $("#book-text").text("No");
-}
-   });
-      
-
-
-
-
-
-
+      // ======================== Button #3
+      $("#mem3-button").click(function () {
+        // [Requirement] Select by Class (.year-text) and use .text() (Method 3)
+        $(".year-text").text("2024"); 
+        $("#mem3").css("color", "green");
+        $("#img3").fadeIn();
+      });
     </script>
   </body>
-
-  <!--- Taken From Khan Academy HTML/JS: Making webpages interactive with jQuery-->
 </html>
